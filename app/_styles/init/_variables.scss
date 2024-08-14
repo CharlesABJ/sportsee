@@ -1,0 +1,160 @@
+// ========================
+// CORRESPONDANCES PX - REM
+// ========================
+
+//px to rem
+$onepx: 0.063rem;
+$twopx: 0.125rem;
+$threepx: 0.188rem;
+$fourpx: 0.25rem;
+$fivepx: 0.313rem;
+$sixpx: 0.375rem;
+$sevenpx: 0.438rem;
+$eightpx: 0.5rem;
+$ninepx: 0.563rem;
+$tenpx: 0.625rem;
+$elevenpx: 0.688rem;
+$twelvepx: 0.75rem;
+$thirteenpx: 0.813rem;
+$fourteenpx: 0.875rem;
+$fifteenpx: 0.938rem;
+$sixteenpx: 1rem;
+$seventeenpx: 1.063rem;
+$eighteenpx: 1.125rem;
+$nineteenpx: 1.188rem;
+$twentypx: 1.25rem;
+$twenty-onepx: 1.313rem;
+$twenty-twopx: 1.375rem;
+$twenty-threepx: 1.438rem;
+$twenty-fourpx: 1.5rem;
+$twenty-fivepx: 1.563rem;
+$twenty-sixpx: 1.625rem;
+$twenty-sevenpx: 1.688rem;
+$twenty-eightpx: 1.75rem;
+$twenty-ninepx: 1.813rem;
+$thirtypx: 1.875rem;
+$thirty-onepx: 1.938rem;
+$thirty-twopx: 2rem;
+$thirty-threepx: 2.063rem;
+$thirty-fourpx: 2.125rem;
+$thirty-fivepx: 2.188rem;
+$thirty-sixpx: 2.25rem;
+$thirty-sevenpx: 2.313rem;
+$thirty-eightpx: 2.375rem;
+$thirty-ninepx: 2.438rem;
+$fourtypx: 2.5rem;
+$fiftypx: 3.125rem;
+$sixtypx: 3.75rem;
+$sixty-fivepx: 4.063rem;
+$seventypx: 4.375rem;
+$seventy-fivepx: 4.688rem;
+$eightypx: 5rem;
+$ninetypx: 5.625rem;
+$hundredpx: 6.25rem;
+
+// ========================
+// COULEURS
+// ========================
+
+$color1: #4ab8ff; // bleu
+$color1-pale: #e9f4fb; // bleu pale
+
+$color2: #fdcc0c; // Jaune
+$color2-pale: #fbf6e5; // Jaune pale
+
+$color3: #ff0000; // rouge
+$color3-pale: #fbeaeb; // rouge pale
+
+$color4: #fd5181; // rose
+$color4-pale: #fbeaef; // rose pale
+
+$color5: #020203; // noir
+
+$color6: #ffffff; // blanc
+
+$color7: #fbfbfb; // gris clair
+
+$none: transparent;
+
+// Liste des couleurs
+$color-list: $color1, $color1-pale, $color2, $color2-pale, $color3, $color3-pale,
+  $color4, $color4-pale, $color5, $color6, $color7, $none;
+
+// Liste des noms des couleurs
+$color-name-list: "color1", "color1-pale", "color2", "color2-pale", "color3",
+  "color3-pale", "color4", "color4-pale", "color5", "color6", "color7", "none";
+// ========================
+// OMBRES
+// ========================
+
+$shadow-color: #00000029; // ombre
+$shadow-color2: #00414017; // ombre2
+
+// ========================
+// TYPOGRAPHIE
+// ========================
+
+// Font Family
+$font-base: "roboto", sans-serif;
+
+// Font Weight
+$weight-black: 900;
+$weight-bold: 700;
+$weight-medium: 500;
+$weight-regular: 400;
+$weight-light: 300;
+$weight-thin: 100;
+
+// Font Sizes
+$classic-h1-font-size: calc($sixteenpx * 2);
+$classic-h2-font-size: calc($sixteenpx * 3);
+$classic-h3-font-size: $twentypx;
+$classic-body-font-size: $sixteenpx;
+$classic-button-font-size: $eighteenpx;
+$big-button-font-size: $twenty-fourpx;
+
+// Line Height
+$classic-h1-line-height: 1.5;
+$classic-h2-line-height: 1.5;
+$classic-h3-line-height: 1.5;
+$classic-body-line-height: $nineteenpx;
+
+// Letter Spacing
+$classic-h1-letter-spacing: 0.5px;
+$classic-h2-letter-spacing: 0.5px;
+$classic-h3-letter-spacing: 0.5px;
+$classic-body-letter-spacing: 0.4px;
+$classic-button-letter-spacing: 0.5px;
+$big-button-letter-spacing: 0.5px;
+
+// ========================
+// ESPACEMENTS
+// ========================
+
+// Margin - Padding
+$classic-button-margin: $tenpx $twenty-twopx;
+$big-button-margin: $twentypx $fourtypx;
+
+$big-screen-margin: calc($hundredpx + $fourtypx);
+$classic-pc-margin: calc($eightypx + $sixteenpx);
+$tablet-margin: calc($thirty-twopx * 2);
+$mobile-margin: $thirty-twopx $sixteenpx;
+
+// Gap
+$classic-gap: $thirty-twopx;
+
+// ========================
+// AUTRES
+// ========================
+
+// Border Radius
+$classic-border-radius: $twelvepx;
+$classic-image-border-radius: $twelvepx;
+$classic-button-border-radius: $twelvepx;
+$big-button-border-radius: $twenty-fourpx;
+
+// Box Shadow
+$classic-box-shadow: 0px 4px 8px $shadow-color;
+
+// Transition
+$classic-transition: 0.3s ease-in-out;

@@ -1,0 +1,1096 @@
+// =============================================
+// MIXINS POUR LES MARGES / MARGINS - PADDINGS
+// =============================================
+
+// Margin
+@mixin section-margin(
+  $top: $big-screen-margin,
+  $right: $big-screen-margin,
+  $bottom: $big-screen-margin,
+  $left: $big-screen-margin
+) {
+  margin: $big-screen-margin;
+  @if $left == "double" {
+    margin: unset;
+    margin-left: calc(2 * $big-screen-margin);
+  }
+  @if $right == "double" {
+    margin: unset;
+    margin-right: calc(2 * $big-screen-margin);
+  }
+
+  @if $left == "negative" {
+    margin: auto;
+    margin-left: calc(-1 * $big-screen-margin);
+  }
+
+  @if $right == "negative" {
+    margin: auto;
+    margin-right: calc(-1 * $big-screen-margin);
+  }
+
+  @if $left != $big-screen-margin and $left != "double" and $left != "negative"
+  {
+    margin-left: $left;
+  }
+  @if $right !=
+    $big-screen-margin and
+    $right !=
+    "double" and
+    $right !=
+    "negative"
+  {
+    margin-right: $right;
+  }
+  @if $top != $big-screen-margin {
+    margin-top: $top;
+  }
+  @if $bottom != $big-screen-margin {
+    margin-bottom: $bottom;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    margin: $classic-pc-margin;
+    @if $left == "double" {
+      margin: unset;
+      margin-left: calc(2 * $classic-pc-margin);
+    }
+    @if $right == "double" {
+      margin: unset;
+      margin-right: calc(2 * $classic-pc-margin);
+    }
+
+    @if $left == "negative" {
+      margin: auto;
+      margin-left: calc(-1 * $classic-pc-margin);
+      padding-inline: $classic-pc-margin;
+    }
+
+    @if $right == "negative" {
+      margin: auto;
+      margin-right: calc(-1 * $classic-pc-margin);
+      padding-inline: $classic-pc-margin;
+    }
+
+    @if $left !=
+      $big-screen-margin and
+      $left !=
+      "double" and
+      $left !=
+      "negative"
+    {
+      margin-left: $left;
+    }
+    @if $right !=
+      $big-screen-margin and
+      $right !=
+      "double" and
+      $right !=
+      "negative"
+    {
+      margin-right: $right;
+    }
+    @if $top != $big-screen-margin {
+      margin-top: $top;
+    }
+    @if $bottom != $big-screen-margin {
+      margin-bottom: $bottom;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    margin: $tablet-margin;
+    @if $left == "double" {
+      margin: unset;
+    }
+    @if $right == "double" {
+      margin: unset;
+    }
+
+    @if $left == "negative" {
+      width: 100%;
+      margin: 0;
+      padding: $tablet-margin;
+    }
+
+    @if $right == "negative" {
+      width: 100%;
+      margin: 0;
+      padding: $tablet-margin;
+    }
+  }
+  @media screen and (max-width: 678px) {
+    margin: $mobile-margin;
+
+    @if $left == "negative" {
+      padding: $mobile-margin;
+      margin: 0;
+    }
+
+    @if $right == "negative" {
+      padding: $mobile-margin;
+      margin: 0;
+    }
+  }
+}
+
+// Padding
+@mixin section-padding(
+  $top: $big-screen-margin,
+  $right: $big-screen-margin,
+  $bottom: $big-screen-margin,
+  $left: $big-screen-margin
+) {
+  padding: $big-screen-margin;
+  @if $left == "double" {
+    padding: unset;
+    padding-left: calc(2 * $big-screen-margin);
+  }
+  @if $right == "double" {
+    padding: unset;
+    padding-right: calc(1.5 * $big-screen-margin);
+  }
+
+  @if $left != $big-screen-margin and $left != "double" {
+    padding-left: $left;
+  }
+  @if $right != $big-screen-margin and $right != "double" {
+    padding-right: $right;
+  }
+  @if $top != $big-screen-margin {
+    padding-top: $top;
+  }
+  @if $bottom != $big-screen-margin {
+    padding-bottom: $bottom;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    padding: $classic-pc-margin;
+    @if $left == "double" {
+      padding: unset;
+      padding-left: calc(2 * $classic-pc-margin);
+    }
+    @if $right == "double" {
+      padding: unset;
+      padding-right: calc(2 * $classic-pc-margin);
+    }
+    @if $left != $big-screen-margin and $left != "double" {
+      padding-left: $left;
+    }
+    @if $right != $big-screen-margin and $right != "double" {
+      padding-right: $right;
+    }
+    @if $top != $big-screen-margin {
+      padding-top: $top;
+    }
+    @if $bottom != $big-screen-margin {
+      padding-bottom: $bottom;
+    }
+  }
+  @media screen and (max-width: 1250px) {
+    padding: $tablet-margin;
+    @if $left == "double" {
+      padding: unset;
+    }
+    @if $right == "double" {
+      padding: unset;
+    }
+  }
+  @media screen and (max-width: 678px) {
+    padding: $mobile-margin;
+  }
+}
+
+// Classic Margin
+@mixin classic-margin() {
+  margin: $classic-pc-margin;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    margin: $classic-pc-margin;
+  }
+  @media screen and (max-width: 1250px) {
+    margin: $tablet-margin;
+  }
+  @media screen and (max-width: 678px) {
+    margin: $mobile-margin;
+  }
+}
+
+// Classic Padding
+@mixin classic-padding() {
+  padding: $classic-pc-margin;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    padding: $classic-pc-margin;
+  }
+  @media screen and (max-width: 1250px) {
+    padding: $tablet-margin;
+  }
+  @media screen and (max-width: 678px) {
+    padding: $mobile-margin;
+  }
+}
+
+// ===========================================================
+// MIXINS POUR LES ESPACEMENTS ENTRE LES ELEMENTS (GAP) - GAP
+// ===========================================================
+
+// Gap entre les éléments d'une section - Gap between section elements
+@mixin section-gap() {
+  gap: calc($hundredpx + $fourtypx) !important;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    gap: calc($eightypx + $sixteenpx) !important;
+  }
+  @media screen and (max-width: 1250px) {
+    gap: calc($thirty-twopx * 2) !important;
+  }
+  @media screen and (max-width: 678px) {
+    gap: $thirty-twopx !important;
+  }
+}
+
+// Gros gap entre les éléments - Big gap between elements
+@mixin big-gap() {
+  gap: calc($hundredpx + $thirty-fivepx) !important;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    gap: calc($eightypx + $sixteenpx) !important;
+  }
+  @media screen and (max-width: 1250px) {
+    gap: calc($thirty-twopx * 2) !important;
+  }
+  @media screen and (max-width: 678px) {
+    gap: $thirty-twopx !important;
+  }
+}
+
+// Gap moyen entre les éléments - Medium gap between elements
+@mixin medium-gap() {
+  gap: $fiftypx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    gap: $fourtypx !important;
+  }
+  @media screen and (max-width: 1250px) {
+    gap: $thirty-twopx !important;
+  }
+  @media screen and (max-width: 678px) {
+    gap: $thirty-twopx !important;
+  }
+}
+
+// Gap classic entre les éléments - Classic gap between elements
+@mixin classic-gap() {
+  gap: $thirty-twopx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    gap: $thirtypx !important;
+  }
+  @media screen and (max-width: 1250px) {
+    gap: $twenty-fourpx !important;
+  }
+  @media screen and (max-width: 678px) {
+    gap: $sixteenpx !important;
+  }
+}
+
+// ========================
+// MIXINS POUR UL/LI
+// ========================
+@mixin list-style-none {
+  list-style: none;
+}
+
+// ========================
+// MIXINS POUR LES BORDURES
+// ========================
+// Classic Border Radius
+@mixin classic-border-radius {
+  border-radius: $twelvepx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    border-radius: $twelvepx;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $twelvepx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $twelvepx;
+  }
+}
+
+// Card Border Radius
+@mixin card-border-radius($top-radius: $twelvepx, $bottom-radius: $twelvepx) {
+  border-radius: $fifteenpx;
+
+  border-radius: $twentypx;
+  @if $top-radius == 0 {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  @if $bottom-radius == 0 {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    border-radius: $fifteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $fifteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $fifteenpx;
+  }
+}
+
+// Medium Border Radius
+@mixin medium-border-radius($top-radius: $twentypx, $bottom-radius: $twentypx) {
+  border-radius: $twentypx;
+  @if $top-radius == 0 {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  @if $bottom-radius == 0 {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    border-radius: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $twentypx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $twentypx;
+  }
+}
+
+// Big Border Radius
+@mixin big-border-radius($top-radius: $sixtypx, $bottom-radius: $sixtypx) {
+  border-radius: calc($sixtypx + $eightpx);
+
+  border-radius: $sixtypx;
+  @if $top-radius == 0 {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+  @if $bottom-radius == 0 {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    border-radius: calc($sixtypx + $eightpx);
+  }
+  @media screen and (max-width: 1250px) {
+    border-radius: $sixtypx;
+  }
+  @media screen and (max-width: 678px) {
+    border-radius: $twentypx;
+  }
+}
+
+// ========================
+// MIXINS POUR LES OMBRES - SHADOWS
+// ========================
+
+// Shadow
+@mixin classic-shadow {
+  box-shadow: 6px 6px 20px #006baf29;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0px 6px 20px rgb(0 107 175 / 40%);
+  }
+}
+
+// Text Shadow
+@mixin classic-text-shadow {
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+// ===============================
+// MIXINS POUR LES ILLUSTRATIONS
+// ===============================
+
+// Section Illustration
+@mixin classic-section-illustration($pos: center) {
+  position: absolute;
+  @if $pos == center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $pos == top {
+  } @else if $pos == bottom {
+  } @else if $pos == left {
+  } @else if $pos == right {
+  }
+}
+
+// H1 Illustration
+@mixin classic-h1-illustration {
+  width: 100%;
+  max-width: calc($twenty-fivepx * 3);
+  height: $twopx;
+}
+
+// H2 Illustration
+@mixin classic-h2-illustration($type: "colored-bar") {
+  width: 100%;
+  @if $type == "colored-bar" {
+    width: 100%;
+    max-width: calc($twenty-onepx * 4);
+    height: $twopx;
+    border-top: 2px solid;
+    margin-right: $fiftypx;
+  }
+
+  @if $type == "classic-icon" {
+    max-width: $thirty-eightpx;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    @if $type == "colored-bar" {
+    }
+
+    @if $type == "classic-icon" {
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    @if $type == "colored-bar" {
+    }
+
+    @if $type == "classic-icon" {
+    }
+  }
+
+  @media screen and (max-width: 678px) {
+    @if $type == "colored-bar" {
+      display: none;
+    }
+
+    @if $type == "classic-icon" {
+    }
+  }
+}
+
+// ==================================
+// MIXINS POUR LES COULEURS - COLORS
+// ===================================
+
+// Fond, texte et bordure - Background, text and border
+@mixin apply-color($style-type, $color-name, $color) {
+  .#{$style-type + "-" + $color-name} {
+    @if $style-type == "bg" {
+      background-color: $color !important;
+    } @else if $style-type == "text" {
+      color: $color !important;
+    } @else if $style-type == "border" {
+      border-color: $color !important;
+    } @else if $style-type == "underline" {
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        max-width: calc(4 * $twenty-sixpx);
+        height: 2px;
+        bottom: 0;
+        background-color: $color !important;
+      }
+    } @else if $style-type == "circle" {
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        width: $thirteenpx;
+        height: $thirteenpx;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: $color !important;
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        &::before {
+          opacity: 0.5;
+        }
+      }
+    } @else if $style-type == "accordion" {
+      position: relative;
+      &::before {
+        color: $color !important;
+      }
+    } @else if $style-type == "svg-fill" {
+      svg {
+        path {
+          fill: $color;
+        }
+      }
+    } @else if $style-type == "svg-stroke" {
+      svg {
+        transition: all 0.3s ease;
+        path {
+          stroke: $color;
+        }
+        &:hover {
+          transform: scale(1.1);
+          opacity: 0.5;
+        }
+        &:active {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    } @else if $style-type == "special-card-hover" {
+      &:hover {
+        background-color: $color !important;
+        .icon {
+          img {
+            filter: invert(100%) brightness(100%);
+          }
+        }
+        .title {
+          color: $color6 !important;
+          span {
+            background-color: $color !important;
+          }
+        }
+        .description {
+          color: $color6 !important;
+        }
+        .author {
+          color: $color6 !important;
+        }
+      }
+    } @else if $style-type == "swiper-pagination" {
+      .swiper-pagination-bullet {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+// =====================================================
+// MIXINS POUR LES MEDIAS (IMAGES, VIDEOS, ETC) - MEDIA
+// =====================================================
+
+@mixin classic-media($type: "cover") {
+  position: relative;
+  display: block;
+  height: calc(5 * $hundredpx + $fourtypx);
+  width: 100%;
+
+  @if $type == "cover" {
+    min-height: calc(3 * $hundredpx);
+    img,
+    video,
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  } @else if $type == "contain" {
+    img,
+    video,
+    iframe {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  } @else if $type == "portrait" {
+    height: calc(8 * $hundredpx);
+    max-height: unset !important;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    max-height: calc(4 * $hundredpx);
+    @if $type == "portrait" {
+      height: calc(6 * $hundredpx);
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+  }
+
+  @media screen and (max-width: 678px) {
+    max-height: calc(3 * $hundredpx);
+  }
+}
+
+// Big Media
+@mixin big-media {
+  @include classic-shadow;
+  & {
+    height: calc(8 * $hundredpx + $ninetypx + $fourpx);
+  }
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    height: calc(7 * $hundredpx);
+  }
+
+  @media screen and (max-width: 1250px) {
+    height: calc(6 * $hundredpx);
+  }
+
+  @media screen and (max-width: 678px) {
+    height: calc(3 * $hundredpx + $fiftypx);
+  }
+}
+// MIXINS POUR LES POLICES / FONTS - TYPOGRAPHY
+// ================================================
+
+// H1
+@mixin classic-h1-font-size {
+  font-size: calc($fourtypx + $eightpx);
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: calc($fourtypx + $fivepx);
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twenty-fourpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $twentypx;
+  }
+}
+@mixin classic-h1 {
+  @include classic-h1-font-size;
+  & {
+    position: relative;
+    font-weight: $weight-medium;
+    line-height: 38px;
+    letter-spacing: 0;
+    margin-bottom: $thirtypx;
+  }
+}
+
+@mixin big-h1-font-size {
+  font-size: $fiftypx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $fourtypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $thirtypx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $twentypx;
+  }
+}
+
+@mixin big-h1 {
+  @include big-h1-font-size;
+  & {
+    font-weight: $weight-black;
+    position: relative;
+    text-transform: uppercase;
+    line-height: 66px;
+    letter-spacing: 0;
+    padding-bottom: $twenty-fourpx;
+  }
+}
+
+// H2
+@mixin classic-h2-font-size {
+  font-size: $thirty-twopx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $twenty-eightpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $twentypx;
+  }
+}
+@mixin classic-h2 {
+  @include classic-h2-font-size;
+  & {
+    position: relative;
+    font-weight: $weight-black;
+    line-height: 1;
+    letter-spacing: 0;
+    padding-bottom: $thirtypx;
+  }
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    padding-bottom: $twenty-eightpx;
+  }
+
+  @media screen and (max-width: 1250px) {
+    padding-bottom: $twenty-sixpx;
+  }
+
+  @media screen and (max-width: 678px) {
+    padding-bottom: $twenty-fourpx;
+  }
+}
+
+// H3
+@mixin classic-h3-font-size {
+  font-size: $twenty-twopx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $eighteenpx;
+  }
+}
+@mixin classic-h3 {
+  @include classic-h3-font-size;
+  & {
+    line-height: 1;
+    letter-spacing: 0;
+    padding-bottom: $sixteenpx;
+  }
+}
+
+@mixin alternative-font-size {
+  font-size: $twenty-fourpx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $twentypx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $eighteenpx;
+  }
+}
+
+// Key numbers
+@mixin classic-key-numbers-font-size {
+  font-size: $sixtypx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: calc(2 * $twenty-eightpx);
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $fourtypx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $fourtypx;
+  }
+}
+@mixin classic-key-numbers {
+  @include classic-key-numbers-font-size;
+  & {
+    font-weight: $weight-black;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+}
+
+// Body
+@mixin classic-body-font-size {
+  font-size: $eighteenpx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $sixteenpx;
+  }
+}
+@mixin classic-body {
+  @include classic-body-font-size;
+  & {
+    font-family: $font-base;
+    font-weight: $weight-light;
+    line-height: 30px;
+    letter-spacing: 0;
+  }
+}
+
+// Nav Menu - Menu de navigation
+@mixin classic-nav-menu-font-size {
+  font-size: $twenty-fourpx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $twenty-fourpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twenty-fourpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $twenty-fourpx;
+  }
+}
+@mixin classic-nav-menu {
+  @include classic-nav-menu-font-size;
+  & {
+    color: $color6;
+    font-weight: $weight-regular;
+    line-height: $twentypx;
+    letter-spacing: 0;
+  }
+  &.active {
+    color: $color3-pale;
+    text-decoration: underline;
+  }
+}
+
+// Button - Bouton
+@mixin classic-button-font-size {
+  font-size: $twentypx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $sixteenpx;
+  }
+}
+@mixin classic-button($type: "link") {
+  @include classic-button-font-size;
+  @include flex-center;
+  & {
+    background: transparent;
+    border: 1px solid;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    border-radius: $thirty-fourpx;
+    padding: $twelvepx $twentypx;
+    text-transform: uppercase;
+    width: max-content;
+    font-weight: $weight-black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+    }
+    @if $type == "link" {
+      &:hover {
+        transform: translateY(-5px);
+      }
+    } @else if $type == "classic" {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// Big Button - Gros bouton
+@mixin big-button-font-size {
+  font-size: $twenty-fourpx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $twenty-fourpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $twenty-fourpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $twenty-fourpx;
+  }
+}
+@mixin big-button {
+  @include big-button-font-size;
+  & {
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Card Button - Bouton de carte
+@mixin card-button-font-size {
+  font-size: $sixteenpx;
+
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $sixteenpx;
+  }
+}
+
+// Card Title - Titre de carte
+@mixin classic-card-title-font-size {
+  font-size: $twentypx;
+  // Responsive
+  @media screen and (max-width: 1640px) {
+    font-size: $eighteenpx;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: $sixteenpx;
+  }
+  @media screen and (max-width: 678px) {
+    font-size: $sixteenpx;
+  }
+}
+@mixin classic-card-title {
+  @include classic-card-title-font-size;
+  & {
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+  }
+}
+
+// ========================
+// MIXINS POUR DISPLAY FLEX
+// ========================
+
+@mixin classic-flex(
+  $direction: column,
+  $justify: flex-start,
+  $align: flex-start
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $fifteenpx;
+  flex-wrap: wrap;
+}
+
+// Centrer en flex - Center in flex
+@mixin flex-center($justify: center, $align: center) {
+  & {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: wrap;
+  }
+}
+
+// ========================
+// MIXINS POUR DISPLAY GRID
+// ========================
+
+// Grid sur x colonnes
+@mixin classic-grid($columns: 4, $center: false) {
+  display: grid;
+  gap: $fifteenpx;
+  grid-template-columns: repeat($columns, 1fr);
+
+  @media screen and (max-width: 1640px) {
+    @if $columns > 4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 1250px) {
+    @if $columns > 3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 678px) {
+    grid-template-columns: 1fr !important;
+    @if $center == true {
+      li,
+      div {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// ==============================
+// MIXINS POUR POSITION ABSOLUTE
+// ==============================
+
+// Position absolute - Center
+@mixin absolute-center($left: 50%, $top: 50%) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  transform: translate(-50%, -40%);
+  @if $left != -50% {
+    left: $left;
+    transform: translate(0, -40%);
+  }
+  @if $top != -50% {
+    top: $top;
+    transform: translate(-50%, 0);
+  }
+}
+
+// Position absolute - Top Left
+@mixin absolute-top-left($left: 0, $top: 0) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+// Position absolute - Top Right
+@mixin absolute-top-right($right: 0, $top: 0) {
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+// Position absolute - Bottom Left
+@mixin absolute-bottom-left($left: 0, $bottom: 0) {
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+}
+
+// Position absolute - Bottom Right
+@mixin absolute-bottom-right($right: 0, $bottom: 0) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin classic-limited-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin oskour {
+  width: 600px;
+  // responsive
+  @media screen and (max-width: 1640px) {
+    width: 500px;
+  }
+  @media screen and (max-width: 1250px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 678px) {
+    width: calc(100vw - 2rem);
+  }
+}

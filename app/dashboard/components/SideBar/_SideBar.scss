@@ -1,0 +1,24 @@
+.SideBar {
+  height: calc(100vh - $eightypx);
+  position: relative;
+  background: $color5;
+  color: $color6;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $sixtypx;
+  padding: 8% $twenty-fourpx $fiftypx;
+  .menu-items-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $twentypx;
+  }
+  .copyright {
+    writing-mode: tb-rl;
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
