@@ -1,0 +1,31 @@
+.StatCard {
+  background-color: $color7;
+  padding: $thirty-twopx;
+  display: flex;
+  align-items: center;
+  gap: $twentypx;
+  border-radius: $sixpx;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .icon {
+    width: $sixtypx;
+    height: $sixtypx;
+    border-radius: $sixpx;
+    overflow: hidden;
+    img {
+      width: 35%;
+      object-fit: contain;
+      margin: auto;
+    }
+  }
+  .content {
+    .stat {
+      font-size: $twentypx;
+      font-weight: $weight-bold;
+    }
+    .label {
+      font-size: $fourteenpx;
+    }
+  }
+}

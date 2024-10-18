@@ -1,0 +1,766 @@
+// ========================
+// SOCIAL NETWORKS STYLE
+// ========================
+
+a {
+  img {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    &.facebook {
+      img {
+        filter: invert(0.5);
+      }
+      svg {
+        display: none;
+      }
+    }
+    &.youtube {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.whatsapp {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.instagram {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.tiktok {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.telegram {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.twitter {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.linkedin {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.pinterest {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.snapchat {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.reddit {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.discord {
+      img {
+        filter: invert(0.5);
+      }
+    }
+    &.flickr {
+      img {
+        filter: invert(0.5);
+      }
+    }
+  }
+}
+
+.contain {
+  margin: $seventypx calc($hundredpx + $fivepx);
+}
+
+// ========================
+// BODY STYLE
+// ========================
+body {
+  @include classic-body;
+}
+
+// ========================
+// MAIN STYLE
+// ========================
+main {
+  position: relative;
+  &.main-hidden {
+    display: none !important;
+  }
+}
+
+.tooltip {
+  padding: 1.3rem 1rem;
+  background-color: #e60000;
+  color: white;
+  font-size: 10px;
+  line-height: 0;
+  transform: translateX(20px);
+}
+
+// ========================
+// SECTION STYLE
+// ========================
+section {
+  @include section-padding($top: $classic-pc-margin);
+
+  &.has-section-illustration {
+    position: relative;
+    .section-illustration {
+      position: absolute;
+      height: 100%;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &.has-title {
+    h2 {
+      &.has-title-illustration {
+        .title-illustration {
+          width: $seventypx;
+        }
+      }
+    }
+  }
+
+  > .description {
+    margin-bottom: $twenty-fourpx;
+  }
+
+  // Appliquer le texte en blanc par défaut
+  &.has-text-white {
+    p,
+    li,
+    span {
+      color: $color6;
+    }
+  }
+  &.section-hidden {
+    display: none !important;
+  }
+}
+
+// ========================
+// H1 STYLE
+// ========================
+h1 {
+  @include classic-h1;
+
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &.has-title-label {
+    .label {
+      @include classic-body-font-size;
+
+      & {
+        display: block;
+        text-transform: inherit;
+        margin-bottom: $tenpx;
+      }
+    }
+  }
+
+  &.has-title-illustration {
+    .title-illustration {
+      &.colored-bar {
+        @include classic-h1-illustration;
+      }
+    }
+  }
+}
+
+// ========================
+// H2 STYLE
+// ========================
+h2 {
+  @include classic-h2;
+
+  .title {
+    //margin-left: $tenpx;
+  }
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+
+  &.has-title-label {
+    .label {
+      @include classic-body-font-size;
+      & {
+        display: block;
+        font-weight: $weight-regular;
+        text-transform: inherit;
+        margin-bottom: $tenpx;
+      }
+    }
+  }
+
+  &.has-title-illustration {
+    &.classic-icon {
+      .illustration {
+        @include classic-h2-illustration("classic-icon");
+      }
+    }
+  }
+}
+
+// ========================
+// H3 STYLE
+// ========================
+h3 {
+  @include classic-h3;
+
+  p {
+    line-height: inherit;
+  }
+
+  p,
+  span {
+    font-size: inherit;
+    letter-spacing: inherit;
+  }
+}
+
+// ========================
+// ANCRE STYLE
+// ========================
+a {
+  transition: 0.3s;
+  color: $color5;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ========================
+// LISTE STYLE (UL & LI)
+// ========================
+
+// =====================================
+// MEDIAS STYLE // ( Style des médias )
+// =====================================
+.media:not(:has(iframe)) {
+  @include classic-shadow;
+}
+iframe {
+  @include classic-shadow;
+}
+
+.media,
+iframe {
+  @include classic-media;
+  &.cover {
+    @include classic-media("cover");
+  }
+  &.contain {
+    @include classic-media("contain");
+  }
+  &.portrait {
+    @include classic-media("portrait");
+  }
+}
+
+// ===================================================
+// BACKGROUND + TEXT + BORDER COLOR + UNDERLINE COLOR
+// ===================================================
+
+// Faire une boucle pour chaque couleurs
+@each $color-name, $color in zip($color-name-list, $color-list) {
+  @include apply-color("bg", $color-name, $color);
+  // Exemple de rendu : .bg-color1 { background-color: $color1; }
+  @include apply-color("text", $color-name, $color);
+  // Exemple de rendu : .text-color1 { color: $color1; }
+  @include apply-color("border", $color-name, $color);
+  // Exemple de rendu : .border-color1 { border-color: $color1; }
+  @include apply-color("underline", $color-name, $color);
+  // Exemple de rendu : .underline-color1 { &::after { background-color: $color1; } }
+  @include apply-color("circle", $color-name, $color);
+  // Exemple de rendu : .circle-color1 { &::before { background-color: $color1; } }
+  @include apply-color("accordion", $color-name, $color);
+  // Exemple de rendu : .accordion-color1 { &::before { color: $color1; } }
+  @include apply-color("svg-fill", $color-name, $color);
+  // Exemple de rendu : .svg-fill-color1 { svg { path { fill: $color1; } }
+  @include apply-color("svg-stroke", $color-name, $color);
+  // Exemple de rendu : .svg-stroke-color1 { svg { path { stroke: $color1; } }
+  @include apply-color("special-card-hover", $color-name, $color);
+  // Exemple de rendu : .reassurance-hover-color1 { &:hover { background-color: $color1; } }
+  @include apply-color("swiper-pagination", $color-name, $color);
+  // Exemple de rendu : .swiper-pagination-color1 { .swiper-pagination-bullet-active { background-color: $color1; } }
+}
+
+// ========================
+// BUTTON STYLE // ( Style des boutons )
+// ========================
+button {
+  @include classic-button("button");
+}
+.button {
+  @include classic-button;
+}
+// ========================
+// ILUSTRATION STYLE // ( Style des illustrations )
+// ========================
+// Couleur des illustrations :
+@mixin illustration-color($color, $color-name) {
+  .illustration-#{$color-name} {
+    svg {
+      path {
+        fill: $color !important;
+      }
+    }
+    &.icon {
+      svg {
+        path {
+          transition: $classic-transition;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            fill: lighten($color, 10%) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Classic
+@include illustration-color(rgba(255, 255, 255, 0.27), "classic");
+// Bleu
+@include illustration-color($color1, "color1");
+// Bleu pâle
+@include illustration-color($color1-pale, "color1-pale");
+// Vert
+@include illustration-color($color2, "color2");
+// Vert pâle
+@include illustration-color($color2-pale, "color2-pale");
+// Rouge
+@include illustration-color($color3, "color3");
+// Rouge pâle
+@include illustration-color($color3-pale, "color3-pale");
+// Noir
+@include illustration-color($color4, "color4");
+// Noir pâle
+@include illustration-color($color4-pale, "color4-pale");
+// Blanc
+@include illustration-color($color4, "color4");
+
+// ========================
+// ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+// ========================
+.navigation {
+  height: calc($twenty-twopx * 2);
+  width: calc($twenty-twopx * 4);
+  bottom: -$tenpx;
+  display: flex;
+  z-index: 3;
+  .nav-btn {
+    height: 100%;
+    top: 0;
+    margin: 0;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &::after {
+      color: $color5;
+      font-size: $classic-body-font-size;
+    }
+    &.swiper-button-prev {
+      left: 0;
+      width: 50%;
+      border-radius: 5px 0 0 5px;
+    }
+    &.swiper-button-next {
+      right: 0;
+      width: 50%;
+      border-radius: 0 5px 5px 0;
+    }
+    @mixin nav-btn-bg-color($color, $color-name) {
+      &.nav-btn-bg-#{$color-name} {
+        background-color: $color;
+        &:hover {
+          background-color: lighten($color, 10%);
+        }
+        &:active {
+          background-color: darken($color, 10%);
+        }
+      }
+    }
+
+    // Bouton bleu
+    @include nav-btn-bg-color($color1, "color1");
+    // Bouton bleu pâle
+    @include nav-btn-bg-color($color1-pale, "color1-pale");
+    // Bouton vert
+    @include nav-btn-bg-color($color2, "color2");
+    // Bouton vert pâle
+    @include nav-btn-bg-color($color2-pale, "color2-pale");
+    // Bouton rouge
+    @include nav-btn-bg-color($color3, "color3");
+    // Bouton rouge pâle
+    @include nav-btn-bg-color($color3-pale, "color3-pale");
+    // Bouton noir
+    @include nav-btn-bg-color($color4, "color4");
+    // Bouton noir pâle
+    @include nav-btn-bg-color($color4-pale, "color4-pale");
+    // Bouton blanc
+    @include nav-btn-bg-color($color5, "color5");
+  }
+}
+
+// ========================
+// BLOCS DIVISION // ( Diviser les blocs en plusieurs colonnes )
+// ========================
+.has-five-columns {
+  @include classic-grid(5);
+}
+
+.has-four-columns {
+  @include classic-grid(4);
+}
+
+.has-three-columns {
+  @include classic-grid(3);
+}
+.has-two-columns {
+  @include classic-grid(2);
+}
+.has-two-columns-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > div {
+    width: 48%;
+  }
+}
+
+.has-one-columns {
+  @include classic-grid(1);
+}
+
+// ========================
+// BLOC EMPLACEMENT ( Changer l'emplacement des blocs ) :
+// ========================
+.reverse-positions {
+  &.horizontal-reverse {
+    direction: rtl; // Pour inverser l'ordre d'affichage des blocs horizontalement ( de droite à gauche )
+    > div {
+      direction: ltr; // Pour remettre l'ordre d'affichage du contenu des blocs horizontalement ( de gauche à droite )
+    }
+  }
+
+  &.vertical-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+// ========================
+// TITLE EMPLACEMENT ( Changer l'emplacement des titres ) :
+// ========================
+.title-emplacement {
+  display: flex;
+  width: 100%;
+  &.title-is-left {
+    justify-content: flex-start;
+  }
+  &.title-is-right {
+    justify-content: flex-end;
+  }
+  &.title-is-center {
+    justify-content: center;
+    .title {
+      margin-left: 0;
+    }
+  }
+}
+
+// ========================
+// ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+// ========================
+.hidden-for-mobile {
+  display: flex !important;
+}
+.hidden-for-tablet {
+  display: flex !important;
+}
+.display-for-mobile {
+  display: none !important;
+}
+.display-for-tablet {
+  display: none !important;
+}
+
+// ========================
+// MESSAGE D'ALERTE && D'ERREUR
+// ========================
+.no-results,
+.alert {
+  margin: auto;
+  color: $color1;
+  width: max-content;
+  // padding-bottom: $classic-h2-margin;
+  font-size: $classic-h2-font-size;
+  text-align: center;
+  line-height: $classic-h2-line-height;
+}
+.alert {
+  background-color: $color3;
+  color: $color5;
+  padding: $fifteenpx;
+  border-radius: $tenpx;
+}
+
+// ===================================
+// OTHER STYLES // ( Autres styles )
+// ==================================
+
+.cursor {
+  cursor: pointer !important;
+}
+.has-like-cards {
+  @include classic-shadow;
+}
+
+.limited-text {
+  @include classic-limited-text;
+  p {
+    @include classic-limited-text;
+  }
+}
+// Carousel
+.swiper-carousel {
+  position: relative;
+}
+.swiper-pagination {
+  width: max-content !important;
+  margin-top: 2rem;
+  margin-inline: auto;
+  display: flex;
+  max-width: 120px;
+  flex-wrap: wrap;
+  gap: $tenpx 0;
+  & {
+    position: relative;
+    padding-top: $twelvepx;
+  }
+  .swiper-pagination-bullet {
+    width: $twelvepx;
+    height: $twelvepx;
+    &:not(.swiper-pagination-bullet-active) {
+      opacity: 0.2;
+    }
+  }
+}
+
+// Accessibilité
+*:focus-visible {
+  // contour de focus uniquement pour la navigation au clavier
+  border: 1px solid $color2 !important;
+  box-shadow: 0 0 8px $color2-pale !important;
+  outline: 1px solid transparent !important;
+}
+
+// Reponses contact form
+.wpcf7 {
+  form.invalid {
+    .wpcf7-response-output {
+      border-color: $color3;
+      color: $color3;
+    }
+  }
+
+  form.sent {
+    .wpcf7-response-output {
+      border-color: $color4;
+      color: $color4;
+    }
+  }
+}
+
+// Categories
+$saugeais-categories: "nature", "aventure", "histoire-et-patrimoine", "culture";
+$traders-categories: "nature", "aventure", "histoire-et-patrimoine", "culture";
+$saugeais-categories-colors: $color1, $color2, $color3, $color4;
+
+@each $category,
+  $color in zip($saugeais-categories, $saugeais-categories-colors)
+{
+  .saugeais-category-#{$category} {
+    background-color: $color;
+    color: $color6;
+  }
+  .traders-category-#{$category} {
+    color: $color;
+  }
+}
+// ========================================================================================================================
+//                                                MEDIA QUERIES ( RESPONSIVE )
+// ========================================================================================================================
+// Desktop
+@media screen and (max-width: 1640px) {
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  .navigation {
+    height: calc($twentypx * 2);
+    width: calc($twentypx * 4);
+  }
+}
+
+// Responsive Mode tablette
+@media screen and (max-width: 1250px) {
+  // ========================
+  // H2 STYLE
+  // ========================
+  h2,
+  legend {
+    p {
+      width: 100%;
+    }
+  }
+
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  .navigation {
+    height: calc($twentypx * 2.5);
+    width: calc($twentypx * 4.5);
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+      font-size: $twenty-twopx;
+    }
+  }
+
+  // ========================
+  // LISTE STYLE (UL & LI)
+  // ========================
+  ul {
+    li {
+      &::before {
+        width: $twelvepx;
+        height: $twelvepx;
+      }
+    }
+  }
+
+  // ========================
+  // ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+  // ========================
+  .hidden-for-tablet {
+    display: none !important;
+  }
+  .display-for-tablet {
+    display: flex !important;
+  }
+
+  // ========================
+  // MESSAGE D'ALERTE && D'ERREUR
+  // ========================
+  .no-results,
+  .alert {
+    @include classic-h2-font-size;
+
+    width: 100%;
+  }
+}
+
+// Responsive Mode mobile
+@media screen and (max-width: 768px) {
+  // ========================
+  // SECTION STYLE
+  // ========================
+  section,
+  .woocommerce {
+    &.has-section-illustration {
+      padding-top: 2rem;
+      .section-illustration {
+        display: none;
+      }
+    }
+  }
+
+  // ========================
+  // LISTE STYLE (UL & LI)
+  // ========================
+  ul {
+    li {
+      &::before {
+        width: $tenpx;
+        height: $tenpx;
+        left: -$twentypx;
+      }
+    }
+  }
+
+  // ========================
+  // BUTTON STYLE // ( Style des boutons )
+  // ========================
+  .button {
+    &:first-of-type {
+      // margin-top: $thirtypx;
+    }
+    &.big {
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  // ========================
+  // ARROWS CAROUSEL STYLE // ( Changer le style des flèches des carrousels )
+  // ========================
+  // .navigation {
+  //   height: calc($twentypx * 1.5);
+  //   width: calc($twentypx * 2.5);
+  //   .swiper-button-next:after,
+  //   .swiper-button-prev:after {
+  //     font-size: $sixteenpx;
+  //   }
+  // }
+
+  // ========================
+  // TITLE EMPLACEMENT ( Changer l'emplacement des titres ) :
+  // ========================
+  .title-emplacement {
+    &.title-is-right {
+      justify-content: flex-start;
+    }
+  }
+
+  // ========================
+  // ELEMENTS À FAIRE APPARAITRE OU DISPARAITRE EN FONCTION DE L'ÉCRAN :
+  // ========================
+  .hidden-for-mobile {
+    display: none !important;
+  }
+
+  .display-for-mobile {
+    display: flex !important;
+  }
+}

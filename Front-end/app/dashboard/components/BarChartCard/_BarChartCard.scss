@@ -1,0 +1,37 @@
+.BarChartCard {
+  position: relative;
+  border-radius: $fivepx;
+  h2 {
+    position: absolute;
+    font-weight: $weight-regular;
+    font-size: $fifteenpx;
+    top: $twentypx;
+    left: $thirtypx;
+    color: #20253a;
+  }
+  ul {
+    display: flex;
+    li {
+      display: flex !important;
+      align-items: center;
+      width: max-content;
+      font-weight: $weight-regular;
+      font-size: $fourteenpx;
+      svg {
+        display: block;
+        width: $eightpx;
+        height: $sixteenpx;
+      }
+      span {
+        color: #74798c !important;
+      }
+    }
+
+    &.legend {
+      gap: $thirtypx;
+      li {
+        gap: $tenpx;
+      }
+    }
+  }
+}
