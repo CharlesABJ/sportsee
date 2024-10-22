@@ -60,7 +60,7 @@ function LineChartCard({ dataLineChartCard }: LineChartCardProps) {
                 stroke="#E60000"
                 x={x}
                 y={0}
-                width={300}
+                width={400}
                 height={300}
                 style={{ transition: '0.1s' }} // Rajouter une transistion pour l'animation du curseur.
 
