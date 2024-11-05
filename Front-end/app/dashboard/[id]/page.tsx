@@ -25,7 +25,7 @@ function Dashboard({ params }: { params: { id: string } }) {
     }
 
     if (errorUser || errorActivity || errorSessions || errorPerformance) {
-        return <Error404 />
+        // return <Error404 />
     }
 
     if (!userData || !userData.data || !userData.data.userInfos) {
